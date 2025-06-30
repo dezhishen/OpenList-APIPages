@@ -65,6 +65,64 @@ cp wrangler.jsonc.example wrangler.jsonc
 ```
 
 
+### Docker部署
+#### 拉取镜像
+```
+docker pull openlistteam/openlist_api_server
+```
+or
+```
+docker pull ghcr.io/openlistteam/openlist_api_server:latest
+```
+#### 启动项目
+```
+docker run -d --name oplist-api-server \
+  -p 3000:3000 \
+  -e OPLIST_MAIN_URLS="api.example.com" \
+  -e OPLIST_ONEDRIVE_UID=xxxx `#optional` \
+  -e OPLIST_ONEDRIVE_KEY=xxxx `#optional` \
+  -e OPLIST_ALICLOUD_UID=xxxx `#optional` \
+  -e OPLIST_ALICLOUD_KEY=xxxx `#optional` \
+  -e OPLIST_BAIDUYUN_UID=xxxx `#optional` \
+  -e OPLIST_BAIDUYUN_KEY=xxxx `#optional` \
+  -e OPLIST_CLOUD115_UID=xxxx `#optional` \
+  -e OPLIST_CLOUD115_KEY=xxxx `#optional` \
+  -e OPLIST_GOOGLEUI_UID=xxxx `#optional` \
+  -e OPLIST_GOOGLEUI_KEY=xxxx `#optional` \
+  -e OPLIST_GOOGLEUI_KEY=xxxx `#optional` \
+  -e OPLIST_YANDEXUI_UID=xxxx `#optional` \
+  -e OPLIST_YANDEXUI_KEY=xxxx `#optional` \
+  -e OPLIST_DROPBOXS_UID=xxxx `#optional` \
+  -e OPLIST_DROPBOXS_KEY=xxxx `#optional` \
+  -e OPLIST_QUARKPAN_UID=xxxx `#optional` \
+  -e OPLIST_QUARKPAN_UID=xxxx `#optional` \
+  openlistteam/openlist_api_server:latest 
+```
+可以替换镜像为**ghcr ghcr.io/openlistteam/openlist_api_server:latest**
+**请务必根据下面的环境变量，修改你使用的环境变量**
+
+#### 环境变量说明
+
+| 变量名称       | 必要 | 变量类型 | 变量说明                          |
+| -------------- | ---- | -------- | --------------------------------- |
+| `OPLIST_MAIN_URLS`    | 是   | string   | 绑定主域名，示例：api.example.com |
+| `OPLIST_ONEDRIVE_UID` | 否   | string   | OneDrive 客户端ID                 |
+| `OPLIST_ONEDRIVE_KEY` | 否   | string   | OneDrive 客户端密钥               |
+| `OPLIST_ALICLOUD_UID` | 否   | string   | 阿里云盘开发者AppID               |
+| `OPLIST_ALICLOUD_KEY` | 否   | string   | 阿里云盘开发者AppKey              |
+| `OPLIST_BAIDUYUN_UID` | 否   | string   | 百度网盘应用密钥AppKey            |
+| `OPLIST_BAIDUYUN_KEY` | 否   | string   | 百度网盘应用密钥SecretKey         |
+| `OPLIST_CLOUD115_UID` | 否   | string   | 115网盘应用ID                     |
+| `OPLIST_CLOUD115_KEY` | 否   | string   | 115网盘应用密钥                   |
+| `OPLIST_GOOGLEUI_UID` | 否   | string   | 谷歌客户端ID                      |
+| `OPLIST_GOOGLEUI_KEY` | 否   | string   | 谷歌全局API Key                   |
+| `OPLIST_YANDEXUI_UID` | 否   | string   | Yandex应用ID                      |
+| `OPLIST_YANDEXUI_KEY` | 否   | string   | Yandex应用密钥                    |
+| `OPLIST_DROPBOXS_UID` | 否   | string   | Dropboxx应用ID                    |
+| `OPLIST_DROPBOXS_KEY` | 否   | string   | Dropbox应用密钥                   |
+| `OPLIST_QUARKPAN_UID` | 否   | string   | 夸克云盘x应用ID                   |
+| `OPLIST_QUARKPAN_KEY` | 否   | string   | 夸克云盘应用密钥                  |
+
 
 ### 变量说明
 
