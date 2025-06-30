@@ -98,8 +98,8 @@ docker run -d --name oplist-api-server \
   -e OPLIST_QUARKPAN_UID=xxxx `#optional` \
   openlistteam/openlist_api_server:latest 
 ```
-可以替换镜像为**ghcr ghcr.io/openlistteam/openlist_api_server:latest**
-**请务必根据下面的环境变量，修改你使用的环境变量**
+- 可以替换镜像为**ghcr ghcr.io/openlistteam/openlist_api_server:latest**
+- **请务必根据下面的环境变量，修改你使用的环境变量**
 
 #### 环境变量说明
 
