@@ -79,23 +79,23 @@ docker pull ghcr.io/openlistteam/openlist_api_server:latest
 docker run -d --name oplist-api-server \
   -p 3000:3000 \
   -e OPLIST_MAIN_URLS="api.example.com" \
-  -e OPLIST_ONEDRIVE_UID=xxxx `#optional` \
-  -e OPLIST_ONEDRIVE_KEY=xxxx `#optional` \
-  -e OPLIST_ALICLOUD_UID=xxxx `#optional` \
-  -e OPLIST_ALICLOUD_KEY=xxxx `#optional` \
-  -e OPLIST_BAIDUYUN_UID=xxxx `#optional` \
-  -e OPLIST_BAIDUYUN_KEY=xxxx `#optional` \
-  -e OPLIST_CLOUD115_UID=xxxx `#optional` \
-  -e OPLIST_CLOUD115_KEY=xxxx `#optional` \
-  -e OPLIST_GOOGLEUI_UID=xxxx `#optional` \
-  -e OPLIST_GOOGLEUI_KEY=xxxx `#optional` \
-  -e OPLIST_GOOGLEUI_KEY=xxxx `#optional` \
-  -e OPLIST_YANDEXUI_UID=xxxx `#optional` \
-  -e OPLIST_YANDEXUI_KEY=xxxx `#optional` \
-  -e OPLIST_DROPBOXS_UID=xxxx `#optional` \
-  -e OPLIST_DROPBOXS_KEY=xxxx `#optional` \
-  -e OPLIST_QUARKPAN_UID=xxxx `#optional` \
-  -e OPLIST_QUARKPAN_UID=xxxx `#optional` \
+  -e OPLIST_ONEDRIVE_UID= `#optional` \
+  -e OPLIST_ONEDRIVE_KEY= `#optional` \
+  -e OPLIST_ALICLOUD_UID= `#optional` \
+  -e OPLIST_ALICLOUD_KEY= `#optional` \
+  -e OPLIST_BAIDUYUN_UID= `#optional` \
+  -e OPLIST_BAIDUYUN_KEY= `#optional` \
+  -e OPLIST_BAIDUYUN_EXT= `#optional` \
+  -e OPLIST_CLOUD115_UID= `#optional` \
+  -e OPLIST_CLOUD115_KEY= `#optional` \
+  -e OPLIST_GOOGLEUI_UID= `#optional` \
+  -e OPLIST_GOOGLEUI_KEY= `#optional` \
+  -e OPLIST_YANDEXUI_UID= `#optional` \
+  -e OPLIST_YANDEXUI_KEY= `#optional` \
+  -e OPLIST_DROPBOXS_UID= `#optional` \
+  -e OPLIST_DROPBOXS_KEY= `#optional` \
+  -e OPLIST_QUARKPAN_UID= `#optional` \
+  -e OPLIST_QUARKPAN_KEY= `#optional` \
   openlistteam/openlist_api_server:latest 
 ```
 - 可以替换镜像为ghcr:
@@ -115,6 +115,7 @@ docker run -d --name oplist-api-server \
 | `OPLIST_ALICLOUD_KEY` | 否   | string   | 阿里云盘开发者AppKey              |
 | `OPLIST_BAIDUYUN_UID` | 否   | string   | 百度网盘应用密钥AppKey            |
 | `OPLIST_BAIDUYUN_KEY` | 否   | string   | 百度网盘应用密钥SecretKey         |
+| `OPLIST_BAIDUYUN_EXT` | 否   | string   | 百度网盘应用ext         |
 | `OPLIST_CLOUD115_UID` | 否   | string   | 115网盘应用ID                     |
 | `OPLIST_CLOUD115_KEY` | 否   | string   | 115网盘应用密钥                   |
 | `OPLIST_GOOGLEUI_UID` | 否   | string   | 谷歌客户端ID                      |
@@ -138,6 +139,7 @@ docker run -d --name oplist-api-server \
 | `alicloud_key` | 否   | string   | 阿里云盘开发者AppKey              |
 | `baiduyun_uid` | 否   | string   | 百度网盘应用密钥AppKey            |
 | `baiduyun_key` | 否   | string   | 百度网盘应用密钥SecretKey         |
+| `baiduyun_ext` | 否   | string   | 百度网盘应用ext        |
 | `cloud115_uid` | 否   | string   | 115网盘应用ID                     |
 | `cloud115_key` | 否   | string   | 115网盘应用密钥                   |
 | `googleui_uid` | 否   | string   | 谷歌客户端ID                      |
