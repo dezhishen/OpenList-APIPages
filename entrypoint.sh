@@ -75,11 +75,11 @@ else
     sed -i "s|\"baiduyun_ext\":.*|\"baiduyun_ext\": \"${OPLIST_BAIDUYUN_EXT}\",|" ./wrangler.jsonc
 fi
 #替换目录下wrangler文件中的cloud115_uid
-if [ -z "${OPLIST_cloud115_uid}" ]; then
+if [ -z "${OPLIST_CLOUD115_UID}" ]; then
     echo "cloud115_uid is not set, skipping replacement."
 else
     echo "Replacing cloud115_uid in wrangler file..."
-    sed -i "s|\"cloud115_uid\":.*|\"cloud115_uid\": \"${OPLIST_cloud115_uid}\",|" ./wrangler.jsonc
+    sed -i "s|\"cloud115_uid\":.*|\"cloud115_uid\": \"${OPLIST_CLOUD115_UID}\",|" ./wrangler.jsonc
 fi
 #替换目录下wrangler文件中的115cloud_key
 if [ -z "${OPLIST_115CLOUD_KEY}" ]; then
