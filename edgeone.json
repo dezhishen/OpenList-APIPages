@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+        {
+            "source": "/static/*",
+            "destination": "/public/static/:splat"
+        },
+        {
+            "source": "/index.html",
+            "destination": "/public/index.html"
+        },
+        {
+            "source": "/",
+            "destination": "/public/index.html"
+        }
+    ]
+}
