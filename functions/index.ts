@@ -2,8 +2,8 @@ import { app } from '../src'
 import { Context } from 'hono'
 
 const notFound = async (c: Context) => {
-    return c.html(
-        `
+  return c.html(
+    `
     <!DOCTYPE html>
     <html>
       <head>
@@ -48,44 +48,18 @@ const notFound = async (c: Context) => {
       </body>
     </html>
   `,
-        404
-    );
+    404
+  );
 };
 
 // Fallback to static directory
 app.notFound(async (c) => {
-    const url = new URL(c.req.url);
-
-    if (url.pathname === '/') {
-        url.pathname = '/public/index.html';
-    }
-
-    try {
-        const res = await fetch(url.toString(), {
-            headers: c.req.header()
-        });
-
-        if (res.ok) {
-            const contentType = res.headers.get('Content-Type')!;
-            const body = await res.arrayBuffer();
-
-            return new Response(body, {
-                status: res.status,
-                headers: {
-                    'Content-Type': contentType,
-                    'Cache-Control': 'public, max-age=3600',
-                },
-            });
-        }
-    } catch (error) {
-        return notFound(c);
-    }
-    return notFound(c);
+  return notFound(c);
 });
 
 app.onError((err, c) => {
-    return c.html(
-        `
+  return c.html(
+    `
     <!DOCTYPE html>
     <html>
       <head>
@@ -131,13 +105,13 @@ app.onError((err, c) => {
       </body>
     </html>
   `,
-        500
-    );
+    500
+  );
 });
 export function onRequest(context: {
-    request: Request;
-    params: Record<string, string>;
-    env: Record<string, any>;
+  request: Request;
+  params: Record<string, string>;
+  env: Record<string, any>;
 }): Response | Promise<Response> {
-    return app.fetch(context.request, context.env);
+  return app.fetch(context.request, context.env);
 }
