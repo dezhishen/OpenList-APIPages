@@ -57,7 +57,7 @@ app.notFound(async (c) => {
     const url = new URL(c.req.url);
 
     if (url.pathname === '/') {
-        url.pathname = '/public/index.html';
+        url.pathname = '/index.html';
     }
 
     try {
